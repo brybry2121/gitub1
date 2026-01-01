@@ -23,7 +23,6 @@
             margin: auto;
             padding: 20px;
         }
-        p{text-align: justify}
 
         /* Header */
         header {
@@ -36,13 +35,31 @@
             color: #fff;
         }
         header p {
-            font-size: 16px;
+            font-size: 18px;
             margin-top: 10px;
+        }
+
+        /* Text Section */
+        .intro-section {
+            background: #394b62;
+            padding: 20px;
+            border-radius: 8px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .intro-section h2 {
+            color: #ffd86a;
+            font-size: 22px;
+        }
+        .intro-section p {
+            font-size: 16px;
+            color: #d4e9fc;
         }
 
         /* Buttons */
         .button {
-            padding: 10px 15px;
+            padding: 12px 20px;
             margin-top: 10px;
             background: #4dc4ff;
             color: #fff;
@@ -51,6 +68,7 @@
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
+            display: inline-block;
         }
         .button:hover {
             background: #ffd86a;
@@ -64,69 +82,25 @@
             gap: 20px;
         }
         .card {
-            background: #283149;
+            background: #394b62;
             padding: 20px;
             border-radius: 8px;
-            flex: 1 1 calc(50% - 20px);
+            flex: 1 1 calc(33% - 20px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .card h2 {
             font-size: 22px;
-            color: #f9fcfe;
+            color: #ffd86a;
             margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 18px;
+            color: #f9fcfe;
         }
         .card p {
             font-size: 14px;
-            color: #c7d0fc;
-            margin-bottom: 15px;
-        }
-        .tutorial-step {
-            margin-top: 15px;
-            background: #394b62;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .tooltip {
-            border-bottom: 1px dashed #fff;
-            cursor: help;
-            position: relative;
-        }
-        .tooltip:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            left: 0;
-            top: 120%;
-            background: #000;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            white-space: nowrap;
-        }
-        .tutorial-step h3 {
-            font-size: 18px;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .tutorial-step p {
-            font-size: 14px;
             color: #d4e9fc;
-        }
-        .tutorial-step img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-        .video-tutorial {
-            margin-top: 20px;
-        }
-        .video-tutorial iframe {
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border: none;
-            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
         /* Responsive Design */
@@ -134,68 +108,91 @@
             .card {
                 flex: 1 1 100%;
             }
-            .video-tutorial iframe {
-                width: 100%;
-                height: auto;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Header Section -->
         <header>
             <h1>Interactive GitHub Learning Dashboard</h1>
-            <p> <strong> <em>Git </em> </strong>is a robust distributed version control system crafted for efficient tracking of file changes, particularly in software development projects. It simplifies version management by enabling developers to create snapshots of their progress ("save points") and effortlessly revert to earlier states when needed. Git plays a vital role in collaborative environments by facilitating streamlined workflows for code integration and branch management. This tutorial includes instructions for downloading Git, along with interactive buttons and detailed screenshots, ensuring a comprehensive understanding of Git's concepts.</p>
+            <p>Explore GitHub workflows—GitHub Desktop, GitHub Online, and Visual Studio Code integration with actionable tutorials.</p>
         </header>
+
+        <!-- Introductory Section -->
+        <div class="intro-section">
+            <h2>Introduction</h2>
+            <p>The Interactive GitHub Learning Dashboard is designed to simplify the process of making projects ready for deployment, reducing confusion while empowering developers for their future journey. It provides an easy-to-follow structure that introduces tools critical to modern software development, including Git, GitHub Desktop, GitHub Online, and Visual Studio Code.</p>
+            
+            <h2>What is Git?</h2>
+            <p>Git is a distributed version control system that tracks and manages changes to files, especially within software projects. It plays a vital role in collaboration, providing a framework for developers to work on the same codebase efficiently.</p>
+            <ul>
+                <li><strong>Command-Line Git:</strong> The foundational Git tool, offering full control directly from a terminal.</li>
+                <li><strong>GitHub Desktop:</strong> A graphical interface designed for managing repositories visually, simplifying workflows for developers.</li>
+                <li><strong>GitHub Online:</strong> A cloud-based solution enabling repository hosting, collaboration, and deployment.</li>
+            </ul>
+            
+            <h2>Why Visual Studio Code?</h2>
+            <p>There are many code editors available, but Visual Studio Code stands out for its lightweight nature, advanced features, and seamless integration with Git and GitHub. It simplifies the editing process and offers debugging, extensions, and collaborative tools. It is the latest choice for efficient coding across the development community.</p>
+            
+            <h2>Key Features of This Project</h2>
+            <ul>
+                <li><strong>Repository Workflow:</strong> Learn how to set up repositories using GitHub Desktop and GitHub Online. Understand deployment workflows through GitHub Pages and connected tools.</li>
+                <li><strong>Code Editing:</strong> Edit your code confidently using Visual Studio Code. Manage changes and push edits to your repository effortlessly.</li>
+                <li><strong>Deployment Ready:</strong> Follow easy tutorials to prepare your code for live deployment, ensuring a hassle-free experience.</li>
+            </ul>
+            <p>This dashboard consolidates these tools into actionable tutorials, ensuring developers can manage their projects confidently and reduce barriers for productivity. It bridges the gap between development and deployment, making Git workflows and VS Code integration accessible to developers at every level.</p>
+        </div>
 
         <!-- Main Content -->
         <div class="main-content">
-            <!-- GitHub Desktop Card -->
+            <!-- GitHub Desktop Section -->
             <div class="card">
                 <h2>GitHub Desktop</h2>
                 <p>GitHub Desktop simplifies Git workflows with an intuitive interface, allowing users to manage repositories visually.</p>
-                <button class="button" onclick="toggleDetails('desktop-tutorial')">Start GitHub Desktop Tutorial</button>
-                <div class="tutorial-step" id="desktop-tutorial" style="display:none;">
-                    <h3>Step 1: Download GitHub Desktop</h3>
-                    <p>Visit <a href="https://desktop.github.com" target="_blank" class="button">GitHub Desktop</a> and download the application based on your operating system.</p>
-                    
-                    <h3>Step 2: Clone or Create Repository</h3>
-                    <p>Clone your repository or create a new repository for offline work and version control. Learn more: <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop" target="_blank" class="button">Cloning and Forking Repositories</a>.</p>
-                    
-                    <h3>Advanced Tips</h3>
-                    <p>Use the "History" tab to visualize commits and track changes. For advanced use, integrate GitHub Desktop with Visual Studio Code for seamless workflows.</p>
-                    
-                    <h3>Additional Resource</h3>
-                    <p>Learn more about efficient workflows: <a href="https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop" target="_blank" class="button">Creating Your First Repository</a>.</p>
-                </div>
+                <a href="#" class="button">Start GitHub Desktop Tutorial</a>
+                <h3>Step 1: Download GitHub Desktop</h3>
+                <p>Visit <a href="https://desktop.github.com/" class="button" target="_blank">GitHub Desktop Site</a> and download the application.</p>
+                <h3>Step 2: Clone or Create a Repository</h3>
+                <p>Clone your repository or create a new repository for offline work. Learn more:</p>
+                <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop" class="button" target="_blank">Cloning and Forking Repositories</a>
+                <h3>Advanced Tips</h3>
+                <p>Visualize commits and track changes using the "History" tab. Integrate GitHub Desktop with VS Code:</p>
+                <a href="https://visualstudio.microsoft.com/" class="button" target="_blank">Download VS Code</a>
             </div>
 
-            <!-- GitHub Online Card -->
+            <!-- GitHub Online Section -->
             <div class="card">
                 <h2>GitHub Online</h2>
-                <p>GitHub Online is a cloud-based platform for managing repositories and collaborating with teams efficiently.</p>
-                <button class="button" onclick="toggleDetails('online-tutorial')">Start GitHub Online Tutorial</button>
-                <div class="tutorial-step" id="online-tutorial" style="display:none;">
-                    <h3>Step 1: Sign Up or Sign In</h3>
-                    <p>Visit <a href="https://github.com" target="_blank" class="button">GitHub Online</a> and create an account or sign in to an existing one.</p>
-                    
-                    <h3>Step 2: Create a Repository</h3>
-                    <p>Click the "+" button in the top-right corner, select "New Repository," and name your project.</p>
-                    
-                    <h3>Step 3: Use GitHub Pages</h3>
-                    <p>Enable GitHub Pages to host your project online. Learn more by hovering: <span class="tooltip" data-tooltip="GitHub Pages lets you publish websites directly from a repository—for free!">GitHub Pages</span>.</p>
-                </div>
+                <p>GitHub Online is a cloud-based platform for managing repositories and collaborating efficiently.</p>
+                <a href="#" class="button">Start GitHub Online Tutorial</a>
+                <h3>Step 1: Sign Up or Sign In</h3>
+                <p>Visit <a href="https://github.com/" class="button" target="_blank">GitHub</a> and create an account or sign in.</p>
+                <h3>Step 2: Create a Repository</h3>
+                <p>Click the "+" button in the top-right corner to create a repository. Adjust its settings as required.</p>
+                <h3>Step 3: Use GitHub Pages</h3>
+                <p>Enable GitHub Pages to deploy and host your repository:</p>
+                <a href="https://docs.github.com/en/pages/getting-started-with-github-pages" class="button" target="_blank">Learn About GitHub Pages</a>
+            </div>
+
+            <!-- Visual Studio Code Section -->
+            <div class="card">
+                <h2>Visual Studio Code Integration</h2>
+                <p>Learn how to connect GitHub Desktop to Visual Studio Code and deploy projects.</p>
+                <a href="#" class="button">Start VS Code Demo</a>
+                <h3>Step 1: Download Visual Studio Code</h3>
+                <p>Visit <a href="https://code.visualstudio.com/" class="button" target="_blank">Visual Studio Code Website</a> to install the editor.</p>
+                <h3>Step 2: Connect Your Repository</h3>
+                <p>Set VS Code as your default editor in GitHub Desktop, then click "Open in VS Code".</p>
+                <h3>Step 3: Edit and Commit</h3>
+                <p>Make edits using VS Code and stage your changes in the Source Control tab. Write a commit message and save changes.</p>
+                <h3>Step 4: Push Changes</h3>
+                <p>Push your updates to GitHub using the "Push Origin" option in GitHub Desktop or Source Control.</p>
+                <h3>Step 5: Deploy Your Project</h3>
+                <p>Host your project using GitHub Pages. Ensure files are pushed and live changes are reflected:</p>
+                <a href="https://docs.github.com/en/pages/getting-started-with-github-pages" class="button" target="_blank">Deploy Using GitHub Pages</a>
             </div>
         </div>
     </div>
-
-    <!-- JavaScript for Toggle -->
-    <script>
-        function toggleDetails(id) {
-            const element = document.getElementById(id);
-            element.style.display = element.style.display === "block" ? "none" : "block";
-        }
-    </script>
 </body>
 </html>
