@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive GitHub Learning Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #f4f4f4;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+        }
+        header p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: #283149;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 calc(50% - 20px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+        .card h2 {
+            font-size: 22px;
+            color: #f9fcfe;
+            margin-bottom: 15px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #c7d0fc;
+            margin-bottom: 15px;
+        }
+        .expandable {
+            background: #394b62;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: 600;
+        }
+        .expandable:hover {
+            background: #566c89;
+        }
+        .details {
+            display: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #566c89;
+            border-radius: 5px;
+            color: #d4e9fc;
+        }
+        .details ul {
+            margin-top: 10px;
+            color: #eef2fc;
+        }
+        .details ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Interactive GitHub Learning Dashboard Step-by-Step Tutorial</h1>
+            <p>Explore GitHub Desktop and Online with actionable tutorials and expanded insights.</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- GitHub Desktop Card with Tutorial -->
+            <div class="card">
+                <h2>GitHub Desktop</h2>
+                <p>GitHub Desktop simplifies Git workflows with an intuitive interface.</p>
+                <button class="expandable" onclick="toggleDetails('desktop-details')">GitHub Desktop Tutorial</button>
+                <div class="details" id="desktop-details">
+                    <p><strong>GitHub Desktop Tutorial:</strong></p>
+                    <ul>
+                        <li><strong>Step 1:</strong> Download and install GitHub Desktop from <a href="https://desktop.github.com" target="_blank">here</a>.</li>
+                        <li><strong>Step 2:</strong> Open the app and sign in with your GitHub account.</li>
+                        <li><strong>Step 3:</strong> Clone a repository or create a new one from the GUI.</li>
+                        <li><strong>Step 4:</strong> Make changes to files, commit them, and push to GitHub.com.</li>
+                        <li><strong>Step 5:</strong> Use the "History" tab to visualize changes and the "Current Branch" tab to manage branches easily.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GitHub Online Card with Tutorial -->
+            <div class="card">
+                <h2>GitHub Online</h2>
+                <p>GitHub Online is a cloud-based collaboration tool for managing repositories and teams.</p>
+                <button class="expandable" onclick="toggleDetails('online-details')">GitHub Online Tutorial</button>
+                <div class="details" id="online-details">
+                    <p><strong>GitHub Online Tutorial:</strong></p>
+                    <ul>
+                        <li><strong>Step 1:</strong> Visit <a href="https://github.com" target="_blank">GitHub.com</a> and sign in or create an account.</li>
+                        <li><strong>Step 2:</strong> Create a new repository: click the "+" button and select "New repository."</li>
+                        <li><strong>Step 3:</strong> Initialize your repository with a README file and set it to public or private.</li>
+                        <li><strong>Step 4:</strong> Commit changes using the web interface or upload files directly.</li>
+                        <li><strong>Step 5:</strong> Collaborate by inviting team members and managing pull requests.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Expandable Sections -->
+    <script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
