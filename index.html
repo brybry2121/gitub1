@@ -23,6 +23,7 @@
             margin: auto;
             padding: 20px;
         }
+        p{text-align: justify}
 
         /* Header */
         header {
@@ -39,7 +40,24 @@
             margin-top: 10px;
         }
 
-        /* Main Content */
+        /* Buttons */
+        .button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #4dc4ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background: #ffd86a;
+            color: #000;
+        }
+
+        /* Tutorials Section */
         .main-content {
             display: flex;
             flex-wrap: wrap;
@@ -51,11 +69,6 @@
             border-radius: 8px;
             flex: 1 1 calc(50% - 20px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
         }
         .card h2 {
             font-size: 22px;
@@ -67,38 +80,63 @@
             color: #c7d0fc;
             margin-bottom: 15px;
         }
-        .expandable {
-            background: #394b62;
-            padding: 10px 20px;
+        .tutorial-step {
             margin-top: 15px;
-            border-radius: 5px;
-            cursor: pointer;
+            background: #394b62;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .tooltip {
+            border-bottom: 1px dashed #fff;
+            cursor: help;
+            position: relative;
+        }
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 0;
+            top: 120%;
+            background: #000;
             color: #fff;
-            font-weight: 600;
-        }
-        .expandable:hover {
-            background: #566c89;
-        }
-        .details {
-            display: none;
-            padding: 10px 15px;
-            margin-top: 10px;
-            background: #566c89;
+            padding: 5px 10px;
             border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .tutorial-step h3 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .tutorial-step p {
+            font-size: 14px;
             color: #d4e9fc;
         }
-        .details ul {
+        .tutorial-step img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
             margin-top: 10px;
-            color: #eef2fc;
         }
-        .details ul li {
-            margin-bottom: 8px;
+        .video-tutorial {
+            margin-top: 20px;
+        }
+        .video-tutorial iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .card {
                 flex: 1 1 100%;
+            }
+            .video-tutorial iframe {
+                width: 100%;
+                height: auto;
             }
         }
     </style>
@@ -107,53 +145,56 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <h1>Interactive GitHub Learning Dashboard Step-by-Step Tutorial</h1>
-            <p>Explore GitHub Desktop and Online with actionable tutorials and expanded insights.</p>
+            <h1>Interactive GitHub Learning Dashboard</h1>
+            <p> <strong> <em>Git </em> </strong>is a robust distributed version control system crafted for efficient tracking of file changes, particularly in software development projects. It simplifies version management by enabling developers to create snapshots of their progress ("save points") and effortlessly revert to earlier states when needed. Git plays a vital role in collaborative environments by facilitating streamlined workflows for code integration and branch management. This tutorial includes instructions for downloading Git, along with interactive buttons and detailed screenshots, ensuring a comprehensive understanding of Git's concepts.</p>
         </header>
 
         <!-- Main Content -->
         <div class="main-content">
-            <!-- GitHub Desktop Card with Tutorial -->
+            <!-- GitHub Desktop Card -->
             <div class="card">
                 <h2>GitHub Desktop</h2>
-                <p>GitHub Desktop simplifies Git workflows with an intuitive interface.</p>
-                <button class="expandable" onclick="toggleDetails('desktop-details')">GitHub Desktop Tutorial</button>
-                <div class="details" id="desktop-details">
-                    <p><strong>GitHub Desktop Tutorial:</strong></p>
-                    <ul>
-                        <li><strong>Step 1:</strong> Download and install GitHub Desktop from <a href="https://desktop.github.com" target="_blank">here</a>.</li>
-                        <li><strong>Step 2:</strong> Open the app and sign in with your GitHub account.</li>
-                        <li><strong>Step 3:</strong> Clone a repository or create a new one from the GUI.</li>
-                        <li><strong>Step 4:</strong> Make changes to files, commit them, and push to GitHub.com.</li>
-                        <li><strong>Step 5:</strong> Use the "History" tab to visualize changes and the "Current Branch" tab to manage branches easily.</li>
-                    </ul>
+                <p>GitHub Desktop simplifies Git workflows with an intuitive interface, allowing users to manage repositories visually.</p>
+                <button class="button" onclick="toggleDetails('desktop-tutorial')">Start GitHub Desktop Tutorial</button>
+                <div class="tutorial-step" id="desktop-tutorial" style="display:none;">
+                    <h3>Step 1: Download GitHub Desktop</h3>
+                    <p>Visit <a href="https://desktop.github.com" target="_blank" class="button">GitHub Desktop</a> and download the application based on your operating system.</p>
+                    
+                    <h3>Step 2: Clone or Create Repository</h3>
+                    <p>Clone your repository or create a new repository for offline work and version control. Learn more: <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop" target="_blank" class="button">Cloning and Forking Repositories</a>.</p>
+                    
+                    <h3>Advanced Tips</h3>
+                    <p>Use the "History" tab to visualize commits and track changes. For advanced use, integrate GitHub Desktop with Visual Studio Code for seamless workflows.</p>
+                    
+                    <h3>Additional Resource</h3>
+                    <p>Learn more about efficient workflows: <a href="https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop" target="_blank" class="button">Creating Your First Repository</a>.</p>
                 </div>
             </div>
 
-            <!-- GitHub Online Card with Tutorial -->
+            <!-- GitHub Online Card -->
             <div class="card">
                 <h2>GitHub Online</h2>
-                <p>GitHub Online is a cloud-based collaboration tool for managing repositories and teams.</p>
-                <button class="expandable" onclick="toggleDetails('online-details')">GitHub Online Tutorial</button>
-                <div class="details" id="online-details">
-                    <p><strong>GitHub Online Tutorial:</strong></p>
-                    <ul>
-                        <li><strong>Step 1:</strong> Visit <a href="https://github.com" target="_blank">GitHub.com</a> and sign in or create an account.</li>
-                        <li><strong>Step 2:</strong> Create a new repository: click the "+" button and select "New repository."</li>
-                        <li><strong>Step 3:</strong> Initialize your repository with a README file and set it to public or private.</li>
-                        <li><strong>Step 4:</strong> Commit changes using the web interface or upload files directly.</li>
-                        <li><strong>Step 5:</strong> Collaborate by inviting team members and managing pull requests.</li>
-                    </ul>
+                <p>GitHub Online is a cloud-based platform for managing repositories and collaborating with teams efficiently.</p>
+                <button class="button" onclick="toggleDetails('online-tutorial')">Start GitHub Online Tutorial</button>
+                <div class="tutorial-step" id="online-tutorial" style="display:none;">
+                    <h3>Step 1: Sign Up or Sign In</h3>
+                    <p>Visit <a href="https://github.com" target="_blank" class="button">GitHub Online</a> and create an account or sign in to an existing one.</p>
+                    
+                    <h3>Step 2: Create a Repository</h3>
+                    <p>Click the "+" button in the top-right corner, select "New Repository," and name your project.</p>
+                    
+                    <h3>Step 3: Use GitHub Pages</h3>
+                    <p>Enable GitHub Pages to host your project online. Learn more by hovering: <span class="tooltip" data-tooltip="GitHub Pages lets you publish websites directly from a repository—for free!">GitHub Pages</span>.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript for Expandable Sections -->
+    <!-- JavaScript for Toggle -->
     <script>
         function toggleDetails(id) {
-            const details = document.getElementById(id);
-            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === "block" ? "none" : "block";
         }
     </script>
 </body>
